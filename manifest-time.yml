@@ -8,4 +8,4 @@ applications:
   env:
    JBP_CONFIG_OPENJDK: 'version: 1.8.+'
   services:
-    - new-relic
+    - new-relic-gap
