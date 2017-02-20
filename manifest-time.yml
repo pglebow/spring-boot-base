@@ -1,0 +1,11 @@
+---
+applications:
+- name: time
+  buildpack: https://github.gapinc.com/platform-services/java-buildpack#v3.8.1-gap.3
+  path: build/libs/base-0.0.1-SNAPSHOT.jar
+  instances: 1
+  memory: 1G
+  env:
+   JBP_CONFIG_OPENJDK: 'version: 1.8.+'
+  services:
+    - new-relic
