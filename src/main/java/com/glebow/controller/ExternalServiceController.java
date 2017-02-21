@@ -36,7 +36,7 @@ public class ExternalServiceController {
         log.info("Calling: " + url);
         
         NewRelic.addCustomParameter("userName", "externalUser");
-        NewRelic.incrementCounter("getDateFromExternalCount");
+        NewRelic.incrementCounter("Custom/counts/getDateFromExternalCount");
         
         RestTemplate t = new RestTemplate();
         try {
