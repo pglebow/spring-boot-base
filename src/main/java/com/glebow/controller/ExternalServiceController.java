@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
+import com.newrelic.api.agent.NewRelic;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -32,6 +34,9 @@ public class ExternalServiceController {
         String retVal = url;
       
         log.info("Calling: " + url);
+        
+        NewRelic.addCustomParameter("userName", "externalUser");
+        NewRelic.incrementCounter("getDateFromExternalCount");
         
         RestTemplate t = new RestTemplate();
         try {
